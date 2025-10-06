@@ -1,0 +1,137 @@
+/* Bas, typsnitt och textstorlek*/
+html, body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #111;
+  background: #fff;
+  margin: 0;
+  padding: 0 8px 24px 8px;
+}
+
+/* Topptexter */
+.section_title {
+  font-weight: 600;
+  margin: 12px 0 6px 0;
+}
+
+/* Flikmenyn överst: Parameters, Graph, Table, All, About */
+.wtab_menu {
+  list-style: none;
+  margin: 8px 0 12px 0;
+  padding: 0;
+  border-bottom: 1px solid #9fb4cc;
+  display: flex;
+  gap: 4px;
+}
+.wtab_menu li {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #e7eef7;
+  border: 1px solid #9fb4cc;
+  border-bottom: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+.wtab_menu li.wtab_active {
+  background: #fff;
+  font-weight: 600;
+  position: relative;
+  top: 1px;
+}
+.wtab_cont {
+  padding: 6px 6px 10px 6px;
+}
+
+/* “Blå band” rader, motsvarar raderna i bilden */
+.par_stack {
+  background: #87a7c5;           /* blå bakgrund */
+  border-left: 1px solid #6f8dab;
+  border-right: 1px solid #6f8dab;
+  border-top: 1px solid #6f8dab;
+  padding: 4px 6px;
+  margin: 6px 0;
+  overflow: auto;                 /* clearfix för floats */
+}
+.par_stack + .par_stack {
+  border-top: none;               /* ser ut som en sammanhängande lista */
+}
+
+/* Enskilda parameterelement på rad */
+.par_elem {
+  float: left;
+  margin: 2px 8px 2px 0;
+  line-height: 22px;
+}
+
+/* Lokala småfält inne i bandet, utan extra bakgrund */
+.par_local {
+  background: transparent;
+}
+
+/* Knapparna för att expandera extra rader, små och kantiga */
+.toggle_btn {
+  display: inline-block;
+  height: 22px;
+  line-height: 20px;
+  padding: 0 6px;
+  margin: 0 6px 0 0;
+  border: 1px solid #6f8dab;
+  background: #e7eef7;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Förklarande texten till höger i ett band, liten och grå */
+.ext_info {
+  float: left;
+  font-size: 12px;
+  color: #1b3550;
+  margin: 2px 8px;
+}
+
+/* Inmatningsfält */
+input[type="text"], input[type="number"], select {
+  height: 22px;
+  line-height: 22px;
+  padding: 0 4px;
+  border: 1px solid #9fb4cc;
+  border-radius: 0;
+  font-size: 13px;
+  width: auto;                    /* bibehåll naturlig bredd */
+  min-width: 46px;                /* ungefär som i bilden */
+}
+
+/* Startknapp */
+#par_start button {
+  padding: 4px 10px;
+  border: 1px solid #6f8dab;
+  background: #e7eef7;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+/* Resultatrutorna, vänsterkant och neutral bakgrund */
+#sim_inparam_step,
+#sim_inparam_sim,
+#sim_result_at_end,
+#sim_result_at_time,
+#phs_graph,
+#phs_out {
+  border: 1px solid #cfd9e6;
+  background: #f7f9fc;
+  padding: 8px;
+  margin: 4px 0 10px 0;
+  min-height: 24px;
+}
+
+/* Små hjälpklasser som redan finns i din HTML */
+.par_float_left { float: left; }
+.par_clear { clear: both; }
+
+/* Länklistor i “About” enklare */
+#wtab_cont_about ul {
+  margin-top: 6px;
+}
+#wtab_cont_about li {
+  margin: 4px 0;
+}
